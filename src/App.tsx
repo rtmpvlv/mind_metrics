@@ -1,13 +1,17 @@
 import React from "react";
 import { Layout } from "antd";
-import { HeaderComponent, ContentComponent } from "./containers";
-import styles from "./App.module.sass";
+import {
+  HeaderComponent,
+  ContentComponent,
+  StatsComponent,
+} from "./containers";
 
 const App = () => {
   return (
     <Layout>
       <HeaderComponent />
       <ContentComponent />
+      <StatsComponent />
     </Layout>
   );
 };
