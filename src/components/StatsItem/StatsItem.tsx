@@ -1,5 +1,5 @@
 import React from "react";
-import { Space } from "antd";
+import { Button, Space } from "antd";
 import { Progress } from "antd";
 import styles from "./StatsItem.module.sass";
 
@@ -10,10 +10,16 @@ type TProps = {
 
 export const StatsItem = (props: TProps) => {
   const { name, percent } = props;
+
+  const strokeColor = percent > 90 ? "#87d068" : "#9fe7ed";
+
   return (
-    <Space direction="vertical" className={styles.stats_item}>
+    <Space direction="vertical" className={styles.container}>
       <div>{name}</div>
-      <Progress percent={percent} steps={20} strokeColor={"#9fd2ed"} />
+      <Space size="middle">
+        <Progress percent={percent} steps={20} strokeColor={strokeColor} />
+        <Button block>Пройти испытание</Button>
+      </Space>
     </Space>
   );
 };
